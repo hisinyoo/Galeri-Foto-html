@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto Sederhana</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef3f8;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0b66ff;
+            margin-bottom: 25px;
+        }
+
+        /* GALERI GRID */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* POPUP (MODAL) */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #popup img {
+            width: 60%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        #popup span {
+            position: absolute;
+            top: 40px;
+            right: 50px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galeri Foto Sederhana</h1>
+    <p>Klik salah satu foto untuk melihat versi lebih besar.</p>
+
+    <div class="gallery">
+        <img src="https://picsum.photos/300/200?random=1" onclick="openPopup(this.src)">
+        <img src="https://picsum.photos/300/200?random=2" onclick="openPopup(this.src)">
+        <img src="https://picsum.photos/300/200?random=3" onclick="openPopup(this.src)">
+        <img src="https://picsum.photos/300/200?random=4" onclick="openPopup(th
